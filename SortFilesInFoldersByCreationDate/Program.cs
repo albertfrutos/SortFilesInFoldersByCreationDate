@@ -7,7 +7,7 @@ namespace SortFilesInFoldersByCreationDate
     {
         static void Main(string[] args)
         {
-            string folderPath = @"/Users/albert/Pictures/iPhone Albert 19032020 al 27082020/3 sort";
+            string folderPath = @"/Users/myUser/Pictures/myDirToSort";
             string[] files = Directory.GetFiles(folderPath);
 
             foreach (string file in files)
@@ -20,6 +20,7 @@ namespace SortFilesInFoldersByCreationDate
                 {
                     Directory.CreateDirectory(targetDirectory);
                 }
+
                 File.Move(file, targetDirectory + "/" + Path.GetFileName(file));
                 
             }
